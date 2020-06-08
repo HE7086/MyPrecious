@@ -1,0 +1,56 @@
+# ~/.ssh/config
+# 
+# configuration for ssh to automatically choose identity file
+# usful when multiple identity file is present
+#
+# generate identity file using command:
+# $ ssh-keygen -t rsa -b 4096
+#
+# export the identity file to target server:
+# $ ssh-copy-id user@host -i /path/to/identity/file
+
+# a normal example
+Host host1.com
+    IdentityFile /path/to/identity/file
+
+# different identity on same server with different port is possible
+Host host1.com
+    Port 1234
+    IdentityFile /path/to/identity/file
+
+# wildcard is possible
+Host *.host2.com
+    IdentityFile /path/to/identity/file
+
+# direct ip address
+Host 192.168.1.1
+    IdentityFile /path/to/identity/file
+
+# other configurable options
+#
+# Host *
+#   ForwardAgent no
+#   ForwardX11 no
+#   PasswordAuthentication yes
+#   HostbasedAuthentication no
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
+#   BatchMode no
+#   CheckHostIP yes
+#   AddressFamily any
+#   ConnectTimeout 0
+#   StrictHostKeyChecking ask
+#   IdentityFile ~/.ssh/id_rsa
+#   IdentityFile ~/.ssh/id_dsa
+#   IdentityFile ~/.ssh/id_ecdsa
+#   IdentityFile ~/.ssh/id_ed25519
+#   Port 22
+#   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+#   MACs hmac-md5,hmac-sha1,umac-64@openssh.com
+#   EscapeChar ~
+#   Tunnel no
+#   TunnelDevice any:any
+#   PermitLocalCommand no
+#   VisualHostKey no
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+#   RekeyLimit 1G 1h
