@@ -3,8 +3,7 @@
 # fix for firacode that it is not detected as monospaced font
 # force its spacing property to be 100
 
-sudo echo '
-<?xml version="1.0"?>
+sudo echo '<?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
 <match target="scan">
