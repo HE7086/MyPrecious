@@ -4,8 +4,7 @@
 
 sudo pacman -S noto-fonts-emoji
 
-sudo echo '
-<?xml version="1.0" encoding="UTF-8"?>
+sudo echo '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
 
